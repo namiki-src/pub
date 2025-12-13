@@ -42,7 +42,11 @@ taxonomies:
   _merge: deep
 
 outputs:
-  _merge: deep
+  home: [html]
+  page: [html]
+  section: [html]
+  taxonomy: [html]
+  term: [html]
 
 markup:
   _merge: deep
