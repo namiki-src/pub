@@ -1,6 +1,6 @@
 baseURL: "http://server.local/k/"
-title: "古代史を解く"
-theme: "web"
+title: "HugoでSSG"
+theme: "hugo"
 
 languageCode: "ja-JP"
 defaultContentLanguage: "ja"
