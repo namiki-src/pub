@@ -1,5 +1,7 @@
 /*/
 !/content/
 !/static/
+!/themes/
+!/themes/hugo/
 .DS_Store
 *.bak
