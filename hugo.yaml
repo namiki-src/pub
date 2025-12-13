@@ -1,0 +1,55 @@
+baseURL: "http://server.local/k/"
+title: "古代史を解く"
+theme: "web"
+
+languageCode: "ja-JP"
+defaultContentLanguage: "ja"
+hasCJKLanguage: true
+enableEmoji: true
+timeZone: "Asia/Tokyo"
+
+enableInlineShortcodes: true
+enableRobotsTXT: false
+ugryURLs: true
+sectionPagesMenu: 'main'
+
+ignoreCache: false
+cleanDestinationDir: true
+
+summaryLength: 70
+rssLimit: 8
+
+copywrite: "2025-2026 &copy; S.Namiki"
+
+params:
+  description: "ページの紹介をここに書く"
+  images: "/img/home.jpg"
+  author:
+#    name: "S.Namiki"
+#    email: ""
+
+sitemap:
+  changefreq: "dayiy"
+  priority: -1
+
+pagenation:
+  _merge: deep
+
+permalinks:
+  _merge: deep
+
+taxonomies:
+  _merge: deep
+
+outputs:
+  _merge: deep
+
+markup:
+  _merge: deep
+
+minify:
+  _merge: deep
+
+build:
+  _merge: deep
+
