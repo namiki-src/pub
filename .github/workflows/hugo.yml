@@ -33,9 +33,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    env:
-      HUGO_VERSION: 0.152.2
-      DART_VERSION: 1.96.0
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -46,10 +43,14 @@ jobs:
           git submodule update --remote
 
       - name: Install Hugo CLI
+        env:
+          HUGO_VERSION: 0.152.2
         run: |
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: Install Dart Sass CLI
+        env:
+          DART_VERSION: 1.96.0
         run: |
           wget -O ${{ runner.temp }}/dart.tar.gz https://github.com/sass/dart-sass/releases/download/${DART_VERSION}/dart-sass-${DART_VERSION}-linux-arm64.tar.gz \
           && sudo tar -xzf ${{ runner.temp }}/dart.tar.gz
@@ -61,7 +62,7 @@ jobs:
         run: |
           hugo \
             --minify \
-            --baseURL "${{ steps.pages.outputs.page_url }}/"
+            --baseURL "${{ steps.deployment.outputs.page_url }}/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -70,6 +71,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
