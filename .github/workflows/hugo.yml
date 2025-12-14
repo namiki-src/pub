@@ -59,13 +59,10 @@ jobs:
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
-          HUGO_BASEDIR_OLD: ${{ steps.page.outputs.base_url }}
-          HUGO_BASEDIR_OLD2: ${{ steps.page.outputs.page_url }}
-          HUGO_BASEDIR: "https://namiki-src.github.io/pub/"
+          HUGO_BASEURL_OLD: ${{ steps.page.outputs.base_url }}
+          HUGO_BASEURL: "https://namiki-src.github.io/pub/"
         run: |
-          echo ${HUGO_BASEDIR_OLD}
-          echo ${HUGO_BASEDIR_OLD2}
-          hugo --minify --baseURL ${HUGO_BASEDIR}
+          hugo --minify --baseURL ${HUGO_BASEURL}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
