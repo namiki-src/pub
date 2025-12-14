@@ -50,6 +50,9 @@ jobs:
         run: |
           wget -O ${{ runner.temp }}/dart.tar.gz https://github.com/sass/dart-sass/releases/download/${DART_VERSION}/dart-sass-${DART_VERSION}-linux-arm64.tar.gz \
           && sudo tar -xzf ${{ runner.temp }}/dart.tar.gz
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
