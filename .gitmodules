@@ -1,3 +1,4 @@
 [submodule "themes/hugo"]
 	path = themes/hugo
 	url = https://github.com/namiki-src/hugo
+	branch = main
